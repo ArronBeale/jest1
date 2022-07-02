@@ -56,3 +56,13 @@ describe('Check value of parameter', () => {
         expect(functions.checkValue(null)).toBeFalsy();
     });
 });
+
+// Object test, toEqual
+describe('Check value of objects', () => {
+    test('Should be John Doe object', () => {
+        expect(functions.createUser()).toEqual({ // toBe wil fail, obj/array is reference type and not primitive
+            firstName: 'John',
+            lastName: 'Doe',
+        });
+    });
+});

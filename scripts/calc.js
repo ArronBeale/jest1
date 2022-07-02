@@ -5,6 +5,12 @@ const functions = {
     multiply: (num1, num2) => num1 * num2,
     divide: (num1, num2) => num1 / num2,
     checkValue: x => x,
+
+    createUser: () => {
+        const user = {firstName: 'John'}
+        user['lastName'] = 'Doe';
+        return user
+    }
 }
 
 
