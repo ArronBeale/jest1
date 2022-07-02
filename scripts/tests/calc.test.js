@@ -1,9 +1,11 @@
 /**
  * @jest-environment jsdom
  */
-const functions = require("../calc");
-// const subtract = require("../calc");
 
+// Imports functions object from calc.js
+const functions = require("../calc");
+
+// Calculator tests
 describe ("calculator", () => {
     describe("addition function", () => {
         test("should return 42 for 20 + 22", () => {
@@ -17,6 +19,7 @@ describe ("calculator", () => {
         })
     })
 
+    // Subtraction
     describe("subtract function", () => {
         test("should return 1 for 10 - 9", () => {
             expect(functions.subtract(10, 9)).toBe(1);
@@ -25,7 +28,8 @@ describe ("calculator", () => {
             expect(functions.subtract(100, 90)).toBe(10);
         });
     })
-
+    
+    // Multiply
     describe("multiply function", () => {
         test("should return 9 for 3 * 3", () => {
             expect(functions.multiply(3, 3)).toBe(9);
@@ -35,6 +39,7 @@ describe ("calculator", () => {
         });
     })
 
+    // Division
     describe("division function", () => {
         test("should return 10 for 100 / 10", () => {
             expect(functions.divide(100, 10)).toBe(10);
@@ -43,4 +48,11 @@ describe ("calculator", () => {
             expect(functions.divide(90, 10)).toBe(9);
         });
     })
+});
+
+// Check value
+describe('Check value of parameter', () => {
+    test('Should be falsy', () => {
+        expect(functions.checkValue(null)).toBeFalsy();
+    });
 });
